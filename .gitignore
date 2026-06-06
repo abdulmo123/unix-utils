@@ -1,0 +1,13 @@
+# ignore everything
+*
+
+# allow directories to be traversed
+!*/ 
+
+# keep gitignore files
+!.gitignore
+
+# keep source code files
+!*.md
+!*.c
+!*.h
