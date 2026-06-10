@@ -8,6 +8,7 @@
 void execute_cat_cmd(int f, char files[FILES][FILENAME_LENGTH], char dash_arg[10]);
 
 int main(int argc, char *argv[]) {
+	FILE *fp = NULL;
 	if (argc > 1) {
 		int f = 0;
 		char dash_arg[10];
@@ -22,6 +23,12 @@ int main(int argc, char *argv[]) {
 			}
 		}
 		execute_cat_cmd(f, files, dash_arg);
+	}
+
+	fp = stdin;
+	char line[512];
+	while (fgets(line, sizeof(line), fp)) {
+		printf("%s", line);
 	}
 }
 
